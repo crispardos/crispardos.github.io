@@ -2,33 +2,47 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8"/>
-        <title>CV Pardo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="assets/css/style.css" rel="stylesheet">
+        <title>CV Cristóbal Pardo</title>
     </head>
     <body>
         <header>
-            <nav>
-                <a href="#CV">CV</a>
-                <a href="#Portafolio">Portafolio</a>
-                <a href="#Contacto">Contacto</a>
+            <nav class="bg-black p-3">
+                <div class="container mx-auto flex flex-col lg:flex-row justify-between items-center">
+                    <div class="text-white font-bold text-3xl mb-4 lg:mb-0 hover:text-orange-600 hover:cursor-pointer">
+                        Cristóbal Pardo
+                    </div>
+                    <div class="lg:flex flex-col lg:flex-row lg:space-x-4 lg:mt-0 mt-4 flex flex-col items-center text-xl">
+                        <a href="#" class="text-white  px-4 py-2 hover:text-orange-600 ">Inicio</a>
+                        <a href="#proyectos" class="text-white  px-4 py-2  hover:text-orange-600">Proyectos</a>
+                        <a href="#cv" class="text-white  px-4 py-2  hover:text-orange-600">Sobre mí</a>
+                        <a href="#contacto" class="text-white  px-4 py-2  hover:text-orange-600">Contactame</a>
+                    </div>
+                </div>
             </nav>
-            <h1>CV de Pardo</h1>
-            <figure>
-                <img src="assets/images/lagarto.jpg" alt="lagarto abrazo" width="400"/>
-            </figure>
+
         </header>
         <main>
-            <section id="CV">
+            <article id="cv">
                 <h1> aqui va mi cv</h1>
-            </section>
-            <section id="Portafolio">
+            </article>
+            <article id="proyectos">
                 <h1> aquí va portafolio</h1>
-            </section>
-            <section id="Contacto">
+            </article>
+            <article id="contacto">
                 <h1> aqui va contacto</h1>
-            </section>
+            </article>
         </main>
+
         <footer>
-            <p>&copy; 2026 Pardo– Todos los derechos reservados.</p>
+            <address>
+                <ul>
+                    <li><a href="https://wa.me/56982247172">Whatsapp</a></li>
+                    <li><a href="mailto:crispsdev@gmail.com">Email</a></li>
+                </ul>
+            </address>
+            <p>&copy; 2026 Pardo – Todos los derechos reservados.</p>
         </footer>
     </body>
 </html>
