@@ -3,53 +3,353 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+              content="CV de Cristóbal Pardo Sepúlveda — Estudiante de Ingeniería Informática orientado a la ingeniería de datos.">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="assets/css/style.css" rel="stylesheet">
-        <title>CV Cristóbal Pardo</title>
+        <title>CV Cristóbal Pardo | Data Engineer</title>
+        <!-- Sin defer a propósito: debe ejecutarse antes del primer render (anti-parpadeo del tema) -->
+        <script src="assets/js/theme.js"></script>
     </head>
-    <body>
+    <body class="bg-zinc-50 font-sans text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100">
         <header>
-            <nav class="bg-black p-3">
-                <div class="container mx-auto flex flex-col lg:flex-row justify-between items-center">
-                    <div class="text-white font-bold text-3xl mb-4 lg:mb-0">
-                        Perfil laboral
+            <nav class="border-b border-zinc-200 bg-white/90 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/90 lg:sticky lg:top-0 lg:z-50 print:hidden">
+                <div class="container mx-auto flex flex-col items-center justify-between gap-3 p-3 lg:flex-row">
+                    <div class="flex w-full items-center justify-between gap-4 lg:w-auto">
+                        <a href="#inicio"
+                           class="text-2xl font-bold tracking-tight text-zinc-900 md:text-3xl dark:text-white">
+                            Cristóbal Pardo<span class="text-zinc-400 dark:text-zinc-600">_</span>
+                        </a>
+                        <button id="theme-toggle" type="button" aria-label="Cambiar entre tema claro y oscuro"
+                                class="rounded-lg border border-zinc-200 p-2 text-zinc-600 transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-white dark:focus-visible:ring-white">
+                            <!-- Sol: visible en modo oscuro -->
+                            <svg class="hidden h-5 w-5 dark:block" fill="none" stroke="currentColor" stroke-width="1.5"
+                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"/>
+                            </svg>
+                            <!-- Luna: visible en modo claro -->
+                            <svg class="block h-5 w-5 dark:hidden" fill="none" stroke="currentColor" stroke-width="1.5"
+                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/>
+                            </svg>
+                        </button>
                     </div>
-                    <div class="lg:flex flex-col lg:flex-row lg:space-x-4 lg:mt-0 mt-4 flex items-center text-xl">
-                        <a href="#" class="text-white  px-4 py-2 hover:text-orange-600 ">Inicio</a>
-                        <a href="#proyectos" class="text-white  px-4 py-2  hover:text-orange-600">Proyectos</a>
-                        <a href="#cv" class="text-white  px-4 py-2  hover:text-orange-600">Sobre mí</a>
-                        <a href="#contacto" class="text-white  px-4 py-2  hover:text-orange-600">Contactame</a>
-                    </div>
+                    <ul class="flex flex-col items-center gap-1 text-lg lg:flex-row lg:gap-2">
+                        <li>
+                            <a href="#inicio"
+                               class="block rounded-lg bg-zinc-900 px-4 py-2 font-medium text-white dark:bg-white dark:text-zinc-900">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="#cv"
+                               class="block rounded-lg px-4 py-2 font-medium text-zinc-600 transition-colors hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800/60">Sobre
+                                mí</a>
+                        </li>
+                        <li>
+                            <a href="#proyectos"
+                               class="block rounded-lg px-4 py-2 font-medium text-zinc-600 transition-colors hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800/60">Proyectos</a>
+                        </li>
+                        <li>
+                            <a href="#contacto"
+                               class="block rounded-lg px-4 py-2 font-medium text-zinc-600 transition-colors hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800/60">Contacto</a>
+                        </li>
+                    </ul>
                 </div>
             </nav>
-
         </header>
-        <main>
-            <article id="introduccion">
-                <h1>Cristóbal Pardo Sepúlveda</h1>
-                <p>Estudiante de segundo año de Ingeniería Informática en Duoc UC,<br>
-                    orientado a Ingenieria de datos y el ciclo de los datos en diferentes tecnologias actuales.</p>
-            </article>
 
-            <article id="cv">
-                <h1>CV</h1>
-                <p>aquí va en cv</p>
-            </article>
+        <main class="mx-auto max-w-5xl space-y-6 px-4 py-10 md:space-y-8 md:px-6 md:py-16 print:space-y-4 print:px-0 print:py-0">
+            <!-- Burbuja: Inicio -->
+            <section id="inicio"
+                     class="scroll-mt-24 rounded-3xl border border-zinc-200 bg-white p-8 text-center shadow-sm dark:border-zinc-800 dark:bg-zinc-900 md:p-14">
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-zinc-500 dark:text-zinc-400">CV ·
+                    Data Engineer</p>
+                <h1 class="mt-4 text-4xl font-bold tracking-tight text-zinc-900 md:text-5xl lg:text-6xl dark:text-white">
+                    Cristóbal Pardo Sepúlveda</h1>
+                <p class="mt-4 flex items-center justify-center gap-1.5 text-zinc-600 dark:text-zinc-400">
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/>
+                    </svg>
+                    Gran Santiago, Chile
+                </p>
+                <p class="mt-3 text-zinc-600 dark:text-zinc-400">Ingeniería de datos · ETL · SQL · Python</p>
+                <div class="mt-8 flex flex-wrap items-center justify-center gap-3 print:hidden">
+                    <a href="#proyectos"
+                       class="rounded-lg bg-zinc-900 px-5 py-2.5 font-medium text-white transition-colors hover:bg-zinc-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200 dark:focus-visible:ring-white">Ver
+                        proyectos</a>
+                    <a href="#contacto"
+                       class="rounded-lg border border-zinc-300 px-5 py-2.5 font-medium text-zinc-700 transition-colors hover:border-zinc-900 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 dark:border-zinc-600 dark:text-zinc-300 dark:hover:border-white dark:hover:text-white dark:focus-visible:ring-white">Contacto</a>
+                    <button id="btn-imprimir" type="button"
+                            class="inline-flex items-center gap-2 rounded-lg border border-zinc-300 px-5 py-2.5 font-medium text-zinc-700 transition-colors hover:border-zinc-900 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 dark:border-zinc-600 dark:text-zinc-300 dark:hover:border-white dark:hover:text-white dark:focus-visible:ring-white">
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5"
+                             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/>
+                        </svg>
+                        Descargar CV
+                    </button>
+                </div>
+                <div class="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium">
+                    <a href="https://github.com/crispardos" target="_blank" rel="noopener"
+                       class="inline-flex items-center gap-1.5 text-zinc-600 transition-colors hover:text-zinc-900 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 dark:text-zinc-400 dark:hover:text-white dark:focus-visible:ring-white">
+                        <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href="mailto:crispardos@proton.me"
+                       class="inline-flex items-center gap-1.5 text-zinc-600 transition-colors hover:text-zinc-900 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 dark:text-zinc-400 dark:hover:text-white dark:focus-visible:ring-white">
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/>
+                        </svg>
+                        crispsdev@gmail.com
+                    </a>
+                </div>
+            </section>
 
-            <article id="proyectos">
-                <h1>Portafolio</h1>
-            </article>
-            <article id="contacto">
-                <h1>Contacto</h1>
-            </article>
+            <!-- Burbuja: Sobre mí -->
+            <section id="cv"
+                     class="scroll-mt-24 rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 md:p-10">
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-zinc-500 dark:text-zinc-400">Sobre
+                    mí</p>
+                <h2 class="mt-2 text-3xl font-bold tracking-tight text-zinc-900 md:text-4xl dark:text-white">Perfil
+                    profesional</h2>
+
+                <article class="mt-6 max-w-3xl space-y-4 text-zinc-600 dark:text-zinc-400">
+                    <p>Estudiante de segundo año de Ingeniería Informática en Duoc UC, orientado a la ingeniería de
+                        datos y al ciclo completo del dato: extracción, limpieza, transformación, modelado y
+                        visualización.</p>
+
+                    <!--
+                    <p>Actualmente, profundizo en Pandas, limpieza y transformación de datos, procesos ETL y DuckDB
+                        mediante autoestudio y práctica diaria.</p>
+                     -->
+                </article>
+
+                <article class="mt-10">
+                    <h3 class="text-xl font-bold tracking-tight text-zinc-900 md:text-2xl dark:text-white">Educación
+                    </h3>
+                    <div class="mt-4 border-l-2 border-zinc-200 pl-5 dark:border-zinc-800">
+                        <p class="font-semibold text-zinc-900 dark:text-zinc-100">Ingeniería Informática mención en
+                            Ciencia de Datos</p>
+                        <p class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">Duoc UC 2025 – 2028</p>
+                    </div>
+                </article>
+
+                <article class="mt-10">
+                    <h3 class="text-xl font-bold tracking-tight text-zinc-900 md:text-2xl dark:text-white">
+                        Certificaciones</h3>
+                    <ul class="mt-2 divide-y divide-zinc-200 dark:divide-zinc-800">
+                        <li class="flex items-start gap-3 py-3">
+                            <svg class="mt-1 h-5 w-5 shrink-0 text-zinc-400 dark:text-zinc-500" fill="none"
+                                 stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                            </svg>
+                            <div class="flex flex-1 flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                                <span class="font-medium text-zinc-900 dark:text-zinc-100">Microsoft Certified: Azure
+                                    Data Fundamentals</span>
+                                <span class="text-sm text-zinc-500 dark:text-zinc-400">Microsoft · 2026</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3 py-3">
+                            <svg class="mt-1 h-5 w-5 shrink-0 text-zinc-400 dark:text-zinc-500" fill="none"
+                                 stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                            </svg>
+                            <div class="flex flex-1 flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                                <span class="font-medium text-zinc-900 dark:text-zinc-100">Python Essentials 1</span>
+                                <span class="text-sm text-zinc-500 dark:text-zinc-400">Cisco · 2025</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3 py-3">
+                            <svg class="mt-1 h-5 w-5 shrink-0 text-zinc-400 dark:text-zinc-500" fill="none"
+                                 stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                            </svg>
+                            <div class="flex flex-1 flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                                <span class="font-medium text-zinc-900 dark:text-zinc-100">AWS Cloud Quest: Cloud
+                                    Practitioner</span>
+                                <span class="text-sm text-zinc-500 dark:text-zinc-400">AWS Training Badge · 2026</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3 py-3">
+                            <svg class="mt-1 h-5 w-5 shrink-0 text-zinc-400 dark:text-zinc-500" fill="none"
+                                 stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                            </svg>
+                            <div class="flex flex-1 flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                                <span class="font-medium text-zinc-900 dark:text-zinc-100">DevOps Essentials
+                                    Professional – DEPC®</span>
+                                <span class="text-sm text-zinc-500 dark:text-zinc-400">CertiProf · 2026 – 2029</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3 py-3">
+                            <svg class="mt-1 h-5 w-5 shrink-0 text-zinc-400 dark:text-zinc-500" fill="none"
+                                 stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                            </svg>
+                            <div class="flex flex-1 flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                                <span class="font-medium text-zinc-900 dark:text-zinc-100">AWS Cloud Quest: Generative
+                                    AI Practitioner</span>
+                                <span class="text-sm text-zinc-500 dark:text-zinc-400">AWS Training Badge · 2026</span>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+
+            <!-- Burbuja: Proyectos -->
+            <section id="proyectos"
+                     class="scroll-mt-24 rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 md:p-10">
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-zinc-500 dark:text-zinc-400">
+                    Portafolio</p>
+                <h2 class="mt-2 text-3xl font-bold tracking-tight text-zinc-900 md:text-4xl dark:text-white">Proyectos
+                    destacados</h2>
+
+                <div class="mt-8 grid gap-6 md:grid-cols-2">
+                    <article
+                            class="flex flex-col rounded-2xl border border-zinc-200 bg-zinc-50 p-6 transition-colors hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-950 dark:hover:border-zinc-500">
+                        <h3 class="text-xl font-bold tracking-tight text-zinc-900 dark:text-white">Sistema de gestión
+                            de postulaciones</h3>
+
+                        <p class="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">Implementé scripts
+                            para crear y poblar un modelo relacional con tablas, secuencias, restricciones y datos de
+                            prueba.</p>
+                        <p class="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">Trabajé con usuarios,
+                            permisos, vistas y un proceso PL/SQL con cursor para calcular puntajes y resultados.</p>
+
+                        <ul class="mb-6 mt-4 flex flex-wrap gap-2">
+                            <li class="rounded-full border border-zinc-300 px-3 py-1 text-xs font-medium text-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+                                Oracle Database 21c
+                            </li>
+                            <li class="rounded-full border border-zinc-300 px-3 py-1 text-xs font-medium text-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+                                SQL
+                            </li>
+                            <li class="rounded-full border border-zinc-300 px-3 py-1 text-xs font-medium text-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+                                PL/SQL
+                            </li>
+                            <li class="rounded-full border border-zinc-300 px-3 py-1 text-xs font-medium text-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+                                GitHub
+                            </li>
+                        </ul>
+
+                        <a href="https://github.com/crispardos/ExamenOracle21" target="_blank" rel="noopener"
+                           class="mt-auto inline-flex items-center gap-1.5 self-start text-sm font-semibold text-zinc-900 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 dark:text-white dark:focus-visible:ring-white">
+                            Ver proyecto
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5"
+                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"/>
+                            </svg>
+                        </a>
+                    </article>
+
+                    <article
+                            class="flex flex-col rounded-2xl border border-zinc-200 bg-zinc-50 p-6 transition-colors hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-950 dark:hover:border-zinc-500">
+                        <h3 class="text-xl font-bold tracking-tight text-zinc-900 dark:text-white">Backend de
+                            aplicación de reservas médicas</h3>
+
+                        <p class="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">Participé en una
+                            arquitectura con Spring Cloud, Eureka Server, API Gateway y bases de datos
+                            independientes.</p>
+                        <p class="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">Mi aporte principal
+                            fue el microservicio de itinerarios: CRUD, validaciones, persistencia, migraciones y
+                            pruebas.</p>
+                        <p class="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">Utilicé Git y GitHub
+                            para versionamiento y Docker Compose para los motores de bases de datos.</p>
+
+                        <ul class="mb-6 mt-4 flex flex-wrap gap-2">
+                            <li class="rounded-full border border-zinc-300 px-3 py-1 text-xs font-medium text-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+                                Java 21
+                            </li>
+                            <li class="rounded-full border border-zinc-300 px-3 py-1 text-xs font-medium text-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+                                Spring Boot
+                            </li>
+                            <li class="rounded-full border border-zinc-300 px-3 py-1 text-xs font-medium text-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+                                MySQL
+                            </li>
+                            <li class="rounded-full border border-zinc-300 px-3 py-1 text-xs font-medium text-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+                                Docker
+                            </li>
+                            <li class="rounded-full border border-zinc-300 px-3 py-1 text-xs font-medium text-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+                                GitHub
+                            </li>
+                        </ul>
+
+                        <a href="https://github.com/GabFloresLuna/MediReservas" target="_blank" rel="noopener"
+                           class="mt-auto inline-flex items-center gap-1.5 self-start text-sm font-semibold text-zinc-900 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 dark:text-white dark:focus-visible:ring-white">
+                            Ver proyecto
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5"
+                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"/>
+                            </svg>
+                        </a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Burbuja: Contacto -->
+            <section id="contacto"
+                     class="scroll-mt-24 rounded-3xl border border-zinc-200 bg-white p-8 text-center shadow-sm dark:border-zinc-800 dark:bg-zinc-900 md:p-12">
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-zinc-500 dark:text-zinc-400">
+                    Contacto</p>
+                <h2 class="mt-2 text-3xl font-bold tracking-tight text-zinc-900 md:text-4xl dark:text-white">Hablemos
+                </h2>
+                <p class="mx-auto mt-3 max-w-xl text-zinc-600 dark:text-zinc-400">¿Un proyecto, una oportunidad o una
+                    duda? Escríbeme y te respondo.</p>
+                <address class="mt-8 not-italic">
+                    <ul class="flex flex-col items-stretch justify-center gap-4 sm:flex-row">
+                        <li>
+                            <a href="mailto:crispardos@pronton.me"
+                               class="flex items-center justify-center gap-2 rounded-2xl border border-zinc-200 px-6 py-4 font-medium text-zinc-900 transition-colors hover:border-zinc-900 hover:bg-zinc-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 dark:border-zinc-700 dark:text-white dark:hover:border-white dark:hover:bg-zinc-800/60 dark:focus-visible:ring-white">
+                                <svg class="h-5 w-5 text-zinc-500 dark:text-zinc-400" fill="none" stroke="currentColor"
+                                     stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/>
+                                </svg>
+                                crispardos@proton.me
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/CrisPSdev" target="_blank" rel="noopener"
+                               class="flex items-center justify-center gap-2 rounded-2xl border border-zinc-200 px-6 py-4 font-medium text-zinc-900 transition-colors hover:border-zinc-900 hover:bg-zinc-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 dark:border-zinc-700 dark:text-white dark:hover:border-white dark:hover:bg-zinc-800/60 dark:focus-visible:ring-white">
+                                <svg class="h-5 w-5 text-zinc-500 dark:text-zinc-400" fill="currentColor"
+                                     viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+                                </svg>
+                                GitHub
+                            </a>
+                        </li>
+                    </ul>
+                </address>
+            </section>
         </main>
 
-        <footer>
-            <address>
-                <ul>
-                    <li><a href="mailto:crispsdev@gmail.com">Email</a></li>
-                </ul>
-            </address>
-            <p>&copy; 2026 Pardo – Todos los derechos reservados.</p>
+        <footer class="border-t border-zinc-200 py-8 dark:border-zinc-800 print:hidden">
+            <p class="text-center text-sm text-zinc-500 dark:text-zinc-400">&copy; 2026 Pardo – Todos los derechos
+                reservados.</p>
         </footer>
+
+        <script src="assets/js/print.js"></script>
     </body>
 </html>
