@@ -1,11 +1,4 @@
-/**
- * Tema claro/oscuro.
- *
- * 1) Aplica el tema guardado (o la preferencia del sistema) ANTES del primer
- *    render para evitar el parpadeo. Por eso este archivo se carga en el
- *    <head> sin defer: debe ejecutarse antes de pintar el <body>.
- * 2) Registra el listener del botón toggle (esperando al DOM).
- */
+
 (function () {
     "use strict";
 
