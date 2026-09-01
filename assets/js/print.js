@@ -1,9 +1,4 @@
-/**
- * Impresión / "Descargar CV".
- *
- * Abre el diálogo de impresión forzando el tema claro: quita .dark antes de
- * imprimir y lo restaura al cerrar el diálogo (evento afterprint).
- */
+
 (function () {
     "use strict";
 
